@@ -1,6 +1,65 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "extends": ["config:recommended"],
+  "rangeStrategy": "bump",
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 8,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on monday"]
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["/^@types\\//"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "type definitions"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["react", "react-dom", "@types/react", "@types/react-dom"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "react dependencies"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["next", "@next/mdx", "@mdx-js/loader", "@mdx-js/react"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "next and mdx dependencies"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["tailwindcss", "@tailwindcss/postcss", "lightningcss"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "styling dependencies"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["typescript", "tsup", "turbo", "rimraf", "inquirer", "@biomejs/biome"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "tooling dependencies"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["gsap", "@gsap/react", "motion", "framer-motion"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "animation dependencies"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": [
+        "es-toolkit",
+        "rxjs",
+        "usehooks-ts",
+        "clsx",
+        "tailwind-merge",
+        "zod",
+        "jotai",
+        "victor",
+        "react-hotkeys-hook"
+      ],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "utility dependencies"
+    }
   ]
 }
