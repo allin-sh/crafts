@@ -1,0 +1,17 @@
+.anchor {
+  anchor-name: --cursor-anchor;
+}
+
+.emoji_container {
+  position: fixed;
+  /* biome-ignore lint/correctness/noUnknownProperty: CSS Anchor Positioning is not recognized by Biome 1.9. */
+  position-anchor: --cursor-anchor;
+
+  box-shadow: 0 0 12px 0px rgba(0, 0, 0, 0.1);
+
+  bottom: calc(anchor(center) + 8px);
+  left: calc(anchor(right) + 8px);
+
+  /* biome-ignore lint/correctness/noUnknownProperty: CSS Anchor Positioning is not recognized by Biome 1.9. */
+  position-try-fallbacks: flip-inline, flip-block;
+}

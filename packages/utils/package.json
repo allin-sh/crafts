@@ -2,15 +2,25 @@
   "name": "@utils",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "scripts": {
-    "build": "",
-    "dev": "pnpm build:fast --watch",
+    "build": "tsup",
+    "watch": "tsup --watch",
     "clean": "rimraf dist .turbo",
     "typecheck": "tsc --noEmit",
-    "build:fast": "tsup src",
     "prepack": "clean-package",
     "postpack": "clean-package restore"
+  },
+  "dependencies": {
+    "clsx": "catalog:utils",
+    "tailwind-merge": "catalog:utils"
   },
   "peerDependencies": {
     "react": "catalog:react19",
