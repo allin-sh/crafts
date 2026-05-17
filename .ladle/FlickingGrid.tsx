@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import type React from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 interface FlickeringGridProps extends React.HTMLAttributes<HTMLDivElement> {
