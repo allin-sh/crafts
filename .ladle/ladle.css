@@ -1,34 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
-.space-mono-regular {
-  font-family: "Space Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.space-mono-bold {
-  font-family: "Space Mono", monospace;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.space-mono-regular-italic {
-  font-family: "Space Mono", monospace;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.space-mono-bold-italic {
-  font-family: "Space Mono", monospace;
-  font-weight: 700;
-  font-style: italic;
-}
-
-html {
-  font-family: "Space Mono", monospace;
-  font-weight: 400;
-}
-
 /* ladle 기본 UI 커스텀용  */
 .ladle-wrapper {
   flex-direction: row-reverse;
@@ -50,7 +19,7 @@ html {
   margin: 8px;
   padding-left: 1em !important;
   padding-top: 1em !important;
-  font-family: "Space Mono", monospace !important;
+
   font-weight: 400 !important;
 
   @media (max-width: 768px) {

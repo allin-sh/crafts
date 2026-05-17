@@ -100,8 +100,6 @@ const CORE_WIDTH = 75;
 
 export const PieMenu = ({ onSelect }: PieMenuProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  // Keep track of the current crust angle
-  const crustAngleRef = useRef(0);
   const [activeSlotIdx, setActiveSlotIdx] = useState(0);
   const activeSlotIdxRef = useRef(0);
   const [show, setShow] = useState(false);
@@ -111,6 +109,7 @@ export const PieMenu = ({ onSelect }: PieMenuProps) => {
     if (typeof window === 'undefined' || !containerRef.current || !show) return;
 
     const center = getCenter(containerRef.current);
+    const setWrapperAngle = gsap.quickSetter(containerRef.current, '--a', 'deg');
     const onMouseMove = (event: MouseEvent) => {
       if ((event.target as HTMLElement).classList.contains('core')) {
         setActiveSlotIdx(-1);
@@ -122,7 +121,7 @@ export const PieMenu = ({ onSelect }: PieMenuProps) => {
       const vec = new Victor(clientX - center.x, center.y - clientY);
 
       const angle = vec.verticalAngleDeg();
-      gsap.quickSetter('.pie_menu_wrapper', '--a', 'deg')(angle);
+      setWrapperAngle(angle);
 
       const activeSlotIdx = getActiveSlotIdx(angle);
 
@@ -209,7 +208,7 @@ export const PieMenu = ({ onSelect }: PieMenuProps) => {
         '<',
       )
         .fromTo(
-          'li',
+          '.menu_item',
           {
             rotate: index => {
               return `${45 + index * 90 + 5}deg`;
@@ -250,6 +249,7 @@ export const PieMenu = ({ onSelect }: PieMenuProps) => {
     },
     {
       dependencies: [show],
+      scope: containerRef,
     },
   );
 
