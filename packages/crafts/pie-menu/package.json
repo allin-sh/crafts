@@ -1,0 +1,42 @@
+{
+  "name": "@craft/pie-menu",
+  "version": "1.0.0",
+  "description": "",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "watch": "tsup --watch",
+    "build": "tsup",
+    "clean": "rimraf dist .turbo",
+    "clean:hard": "rimraf dist .turbo node_modules",
+    "typecheck": "tsc --noEmit",
+    "type": "tsc --emitDeclarationOnly --outDir dist"
+  },
+  "peerDependencies": {
+    "react": "catalog:react19",
+    "react-dom": "catalog:react19"
+  },
+  "devDependencies": {
+    "@core/debug": "workspace:*",
+    "@types/react": "catalog:react19",
+    "@types/react-dom": "catalog:react19"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@gsap/react": "catalog:animation",
+    "@types/victor": "^1.1.5",
+    "gsap": "catalog:animation",
+    "jotai": "^2.19.0",
+    "motion": "^12.38.0",
+    "react-hotkeys-hook": "^5.2.4",
+    "rxjs": "catalog:utils",
+    "victor": "^1.1.0"
+  }
+}
