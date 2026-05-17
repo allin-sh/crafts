@@ -18,8 +18,8 @@
     "@craft/viewtransition": "workspace:*",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "15.4.0-canary.51",
-    "next": "15.3.2",
+    "@next/mdx": "15.3.9",
+    "next": "15.3.9",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
     "zod": "^3.25.28"
