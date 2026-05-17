@@ -28,7 +28,6 @@ export type PaneProps<T extends Record<string, unknown>> = {
  *
  * ```
  */
-
 export const usePane = <Config extends Record<string, unknown>>({
   defaultConfig,
   ...paneProps

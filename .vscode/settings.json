@@ -1,5 +1,5 @@
 {
-  // module.css 파일 커맨드 클릭 시, d.ts 파일때문에 바로가기가 안돼는 문제 해결 (TSX Definition Filter 플러그인 필요)
+  // module.css import 를 커맨드 클릭 시, d.ts 파일때문에 해당 module.css 파일로 바로가기가 안되는 문제 해결 (TSX Definition Filter 플러그인 필요)
   "tsxDefinitionFilter.remove": ["**/*/css-module.d.ts"],
   "files.exclude": {
     "**/.git": true,
