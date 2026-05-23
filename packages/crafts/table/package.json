@@ -1,0 +1,35 @@
+{
+  "name": "@craft/table",
+  "version": "1.0.0",
+  "description": "",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "watch": "tsup --watch",
+    "build": "tsup",
+    "clean": "rimraf dist .turbo",
+    "clean:hard": "rimraf dist .turbo node_modules",
+    "typecheck": "tsc --noEmit",
+    "type": "tsc --emitDeclarationOnly --outDir dist"
+  },
+  "dependencies": {
+    "@utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "catalog:react19",
+    "react-dom": "catalog:react19"
+  },
+  "devDependencies": {
+    "@core/debug": "workspace:*",
+    "@types/react": "catalog:react19",
+    "@types/react-dom": "catalog:react19"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,112 @@
+.input {
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 4px 7px;
+  outline: 0;
+  font-family: var(--font-mono);
+  color: var(--foreground);
+  font-size: 12px;
+  background-color: var(--background);
+  width: 100%;
+}
+
+.input:focus-visible {
+  border-color: var(--ring, oklch(0.708 0 0));
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring, oklch(0.708 0 0)) 20%, transparent);
+}
+
+.commandInputGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.commandInputGroup .input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.primaryButton,
+.cancelButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  height: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  padding-inline: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease, color 120ms ease;
+}
+
+.primaryButton {
+  --button-background: oklch(0.623 0.214 259.815);
+
+  color: var(--primary-foreground, oklch(0.985 0 0));
+  background: var(--button-background);
+  border-color: var(--button-background);
+}
+
+.primaryButton:hover {
+  background: color-mix(in oklch, var(--button-background) 88%, black);
+}
+
+.cancelButton {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.cancelButton:hover {
+  background: var(--muted, oklch(0.97 0 0));
+}
+
+.primaryButton:focus-visible,
+.cancelButton:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring, oklch(0.708 0 0)) 35%, transparent);
+}
+
+.iconButton {
+  flex: 0 0 auto;
+  width: 2rem;
+  padding-inline: 0;
+  font-size: 1rem;
+}
+
+.previewSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--muted-foreground, oklch(0.556 0 0));
+  font-size: 0.75rem;
+}
+
+.previewRow {
+  background: color-mix(in oklch, var(--primary, oklch(0.205 0 0)) 5%, transparent);
+}
+
+.previewAliasName,
+.previewCommand {
+  color: var(--muted-foreground, oklch(0.556 0 0));
+  font-style: italic;
+}
+
+.previewSkippedRow {
+  color: var(--destructive, oklch(0.577 0.245 27.325));
+  font-size: 0.75rem;
+}
+
+.previewActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}

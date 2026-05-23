@@ -1,0 +1,8 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "..",
+    "moduleResolution": "bundler"
+  },
+  "include": ["*.ts", "*.tsx", "../src", "../../../../css-module.d.ts"]
+}
